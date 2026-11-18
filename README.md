@@ -4,12 +4,14 @@ Windows 10/11 için tek tıkla çalışan bir sağlık kontrol programı. Bilgis
 
 NVIDIA, AMD ve Intel; masaüstü ve laptop fark etmeksizin çalışır. Ek bir program kurmak gerekmez.
 
-## Kullanım
+## İndir ve çalıştır
 
-1. Depoyu indir (**Code → Download ZIP**) ve bir klasöre çıkar.
-2. **`Kontrol-Et.bat`** dosyasına çift tıkla.
+1. Sağdaki **Releases** bölümünden (veya yukarıdaki dosya listesinden) **`PC-Saglik-Kontrol-Setup.bat`** dosyasını indir.
+2. Dosyaya çift tıkla.
 3. Yönetici izni istenince **Evet** de.
-4. 1-2 dakika sonra rapor tarayıcıda açılır.
+4. 1-2 dakika sonra rapor tarayıcıda açılır ve masaüstüne kaydedilir.
+
+Tek dosya, kurulum yok. Bilgisayarına hiçbir şey yüklemez.
 
 > Windows "Bilgisayarınız korundu" uyarısı verirse **Ek bilgi → Yine de çalıştır** seç.
 
@@ -29,20 +31,14 @@ NVIDIA, AMD ve Intel; masaüstü ve laptop fark etmeksizin çalışır. Ek bir p
 
 ## Ayarlar
 
-`PC-Saglik-Kontrol.ps1` dosyasının başındaki iki değeri değiştirebilirsin:
+`PC-Saglik-Kontrol-Setup.bat` dosyasını Not Defteri ile açıp baştaki iki değeri değiştirebilirsin:
 
 - `$DriverMaxAgeMonths = 4`: Ekran kartı sürücüsü bundan eskiyse uyarı verir.
 - `$BiosMaxAgeMonths = 24`: BIOS bundan eskiyse uyarı verir.
 
-## Komut satırından çalıştırma
+## Nasıl çalışır?
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\PC-Saglik-Kontrol.ps1 [-NoOpen] [-SkipWindowsUpdate] [-NoPause]
-```
-
-- `-NoOpen`: Raporu tarayıcıda açmaz.
-- `-SkipWindowsUpdate`: Windows Update taramasını atlar (daha hızlı).
-- `-NoPause`: Sonda Enter beklemez.
+`PC-Saglik-Kontrol-Setup.bat`, içinde PowerShell kodu taşıyan tek bir dosyadır. Çift tıklandığında önce yönetici izni ister, ardından kendi içindeki PowerShell kısmını çalıştırır. Kodun tamamını Not Defteri ile açıp okuyabilirsin.
 
 ## Notlar
 
